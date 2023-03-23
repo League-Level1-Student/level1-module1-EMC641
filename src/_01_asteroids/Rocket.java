@@ -1,7 +1,5 @@
 package _01_asteroids;
 
-import game_tools.GameControlScene;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -50,7 +48,6 @@ public class Rocket implements GameControlScene {
 	 * constructor.
 	 */
 
-	@Override
 	public void draw(Graphics g) {
 		Graphics2D graphics2D = (Graphics2D) g;
 		graphics2D.rotate(Math.toRadians(angle), x, y);
@@ -90,7 +87,6 @@ public class Rocket implements GameControlScene {
 
 	}
 
-	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_D:
@@ -116,7 +112,6 @@ public class Rocket implements GameControlScene {
 		}
 	}
 
-	@Override
 	public void keyReleased(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_D:

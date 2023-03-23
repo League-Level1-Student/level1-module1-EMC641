@@ -85,7 +85,6 @@ public class AsteroidsGame implements GameScene, ActionListener {
 		}
 	}
 
-	@Override
 	public void draw(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, WIDTH, HEIGHT);

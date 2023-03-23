@@ -1,5 +1,7 @@
 package _05_popcorn;
 
+import javax.swing.JOptionPane;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2019
  *    Level 1
@@ -44,7 +46,12 @@ class Microwave {
 }
 
 public class Popcorn {
-
+public static void main(String[] args) {
+	Popcorn popcorn = new Popcorn("something");
+	String flavor = JOptionPane.showInputDialog(null, "What flavor popcorn do you want?");
+	String time = JOptionPane.showInputDialog(null, "How long do you want to cook the popcorn for?");
+	
+}
 	private int kernels = 20;
 	private String flavor;
 	private boolean isCooked = false;
@@ -79,8 +86,8 @@ public class Popcorn {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
+	}}
 	
-}
+
 
 

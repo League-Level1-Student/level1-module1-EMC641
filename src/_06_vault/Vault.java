@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class Vault {
 	private int secret = new Random().nextInt(1000001);
+Object SecretAgent;
 
 	/**
 	 * Tries to access the vault
@@ -19,4 +20,6 @@ public class Vault {
 	public boolean tryCode(int guess) {
 		return guess == secret;
 	}
+
+
 }
