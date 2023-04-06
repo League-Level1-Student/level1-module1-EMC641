@@ -47,7 +47,6 @@ class Microwave {
 
 public class Popcorn {
 public static void main(String[] args) {
-	Popcorn popcorn = new Popcorn("something");
 	String flavor = JOptionPane.showInputDialog(null, "What flavor popcorn do you want?");
 	String time = JOptionPane.showInputDialog(null, "How long do you want to cook the popcorn for?");
 	

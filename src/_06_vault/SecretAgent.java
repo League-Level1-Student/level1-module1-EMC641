@@ -1,26 +1,27 @@
 package _06_vault;
 
+import javax.swing.JOptionPane;
+
 public class SecretAgent {
-public static void main(String[] args) {
 	
+	
+int findCode(Vault something) {
+	Vault vault = new Vault();
+	
+	for(int i=0;i<1000002;i++)  {
 		
-		
+		if(vault.tryCode(i)==true) {
+			return(i);
+		}
+
+	
 	}
+	
+	return(-1);
+	
 
 
-public static void findCode() {
-Vault vault = new Vault();
-	
-for(int i=0;i<1000001;i++)  {
-	if(vault.tryCode(i))  {
-	
-System.out.println(i);
-	
-	}
-	else { 
-		System.out.println(-1);
-	}
-}
-	
-}
-}
+
+}}
+
+
