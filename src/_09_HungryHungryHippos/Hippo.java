@@ -13,6 +13,16 @@ public class Hippo {
     int startNeckSpeed = 15;
     int neckMoveDistance = 100;
 
+    String name;
+    String name1;
+    String name2;
+    String name3;
+    
+    String color;
+    String color1;
+    String color2;
+    String color3;
+    
     Hippo LizziePurple = new Hippo(location,"Lizzie", "Purple");
     Hippo HeneryOrange = new Hippo(location,"Henery", "Orange");
     Hippo HomerGreen = new Hippo(location,"Homer", "Green");
