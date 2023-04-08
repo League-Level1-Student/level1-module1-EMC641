@@ -50,6 +50,9 @@ import game_tools.GameControlScene;
  * https://nssdc.gsfc.nasa.gov/planetary/factsheet/
  */
 
+
+
+
 public class SolarSystem implements GameControlScene {
     static final int DISPLAY_WIDTH = 1000;
     static final int DISPLAY_HEIGHT = DISPLAY_WIDTH;
@@ -59,6 +62,15 @@ public class SolarSystem implements GameControlScene {
     static final int SUN_DIAMETER_PIXELS = 2 * SUN_RADIUS_PIXELS;
     static final int MS_PER_DAY = 10;
 
+    
+    Planet mercury = new Planet(4879);
+    Planet venus = new Planet(12104);
+    Planet earth = new Planet(12756);
+    Planet mars = new Planet(6792);
+    Planet jupiter = new Planet(142984);
+    Planet saturn = new Planet(120536);
+    Planet uranus = new Planet(51118);
+    Planet neptune = new Planet(49528);
     /*
      * Member variables
      */
@@ -66,7 +78,7 @@ public class SolarSystem implements GameControlScene {
     Long startTimeMs = null;
     Game gameFrame = new Game("Solar System");
     
-    Planet earth = new Planet(12);
+    Planet earth1 = new Planet(12);
     
     public SolarSystem() {
         gameFrame.setScene(this);
@@ -91,7 +103,6 @@ public class SolarSystem implements GameControlScene {
         return 0;
     }
 
-    @Override
     public void draw(Graphics g) {
         /*
          * Space
@@ -117,10 +128,17 @@ public class SolarSystem implements GameControlScene {
         /*
          * Add planets here
          */
-        earth.draw(g, numDays);
+        
+        mercury.draw(g, 88);
+        venus.draw(g, 224);
+        earth.draw(g, 365);
+        mars.draw(g, 687);
+        jupiter.draw(g,4331);
+        saturn.draw(g, 10747);
+        uranus.draw(g, 30589);
+        neptune.draw(g, 59800);
     }
     
-    @Override
     public void keyPressed(KeyEvent e) {
         
     }

@@ -11,6 +11,12 @@ public class Planet {
      */
     int x, y, width, height;
     int diameter;
+    Color planetColor;
+    int avgDistFromSun;
+    int daysToOrbit;
+    
+    
+    
     
     public Planet(int diameterPixels) {
         this.diameter = diameterPixels;
@@ -28,14 +34,14 @@ public class Planet {
         /*
          * Update position
          */
-        double angle = 2 * Math.PI * numDays / orbitalPeriod;
+        double angle = 2 * Math.PI * numDays / daysToOrbit;
         x = (int)(Math.cos(angle) * avgDistFromSun);
         y = (int)(Math.sin(angle) * avgDistFromSun);
         
         /*
          * Draw orbit
          */
-        g.setColor(color);
+        g.setColor(planetColor);
         g.drawOval(SolarSystem.CENTER_X - avgDistFromSun,
                    SolarSystem.CENTER_Y - avgDistFromSun,
                    2*avgDistFromSun, 2*avgDistFromSun);
@@ -45,7 +51,7 @@ public class Planet {
          */
         int centerX = SolarSystem.CENTER_X + x;
         int centerY = SolarSystem.CENTER_Y + y;
-        g.setColor(color);
+        g.setColor(planetColor);
         g.fillOval(centerX - (diameter/2), centerY - (diameter/2), diameter, diameter);
         
         /*

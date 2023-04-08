@@ -13,10 +13,15 @@ public class Hippo {
     int startNeckSpeed = 15;
     int neckMoveDistance = 100;
 
+    Hippo LizziePurple = new Hippo(location,"Lizzie", "Purple");
+    Hippo HeneryOrange = new Hippo(location,"Henery", "Orange");
+    Hippo HomerGreen = new Hippo(location,"Homer", "Green");
+    Hippo HarryYellow = new Hippo(location,"Harry", "Yellow");
+    
     /*
      * Constructor
      */
-    public Hippo(String location) {
+    public Hippo(String Location,String name, String color) {
         this.location = location;
         
         setupPosition();

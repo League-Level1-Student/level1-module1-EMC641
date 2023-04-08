@@ -11,11 +11,6 @@ public class Duck {
 	       this.numberOfFriends = numberOfFriends;
 	}
 
-	void Duck1(String icecream, int numberOffFriends, String lightblue) {
-	       this.favoriteFood = favoriteFood;
-	       this.numberOfFriends = numberOfFriends;
-	       this.favoriteColor = favoriteColor;
-	}
 	
 	
 
