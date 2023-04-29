@@ -15,12 +15,12 @@ public class Fish {
 	}
 
 	void walk() {
-		
+		System.out.println("your fish is walking");
 		
 	}
 	
 	void sleep() {
-		
+		System.out.println("you fish is sleeping");
 		
 	}
 	
