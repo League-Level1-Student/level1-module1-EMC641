@@ -24,6 +24,7 @@ public class TurfWar extends PApplet {
         int rightKey;
 
         Player(int x,int y,int speed,int playerSize,int playerColor,int upKey, int leftKey, int downKey, int rightKey) {
+        	
         	this.x = x;
         	this.y = y;
         	this.speed = speed;
@@ -47,7 +48,7 @@ public class TurfWar extends PApplet {
         boolean moveRight = false;
         int pixelCount = 0;
 
-        void drawPlayer() {
+       public void drawPlayer() {
             /*
              * 2. Draw a rectangle to represent the the Player using its color,
              * coordinates and size. DONE
@@ -56,7 +57,7 @@ public class TurfWar extends PApplet {
         	rect(x,y,playerSize,playerSize);
         }
 
-        void update() {
+      public  void update() {
             /*
              * This piece of codes makes the player move up without
              * leaving the bounds of the sketch if its up key is pressed.
@@ -87,7 +88,7 @@ public class TurfWar extends PApplet {
         }
 
         // You do not need to change any other Player methods.
-        void enableMovement(int keyDown) {
+       public void enableMovement(int keyDown) {
             if (keyDown == upKey) {
                 moveUp = true;
             }
@@ -102,7 +103,7 @@ public class TurfWar extends PApplet {
             }
         }
 
-        void disableMovement(int keyDown) {
+       public void disableMovement(int keyDown) {
             if (keyDown == upKey) {
                 moveUp = false;
             }
@@ -163,7 +164,7 @@ public class TurfWar extends PApplet {
     @Override
     public void settings() {
         // 5. Set the size for your sketch. Make it at least 300x300. DONE
-       setSize(300,300);
+       setSize(700,700);
     }
 
     @Override
@@ -193,8 +194,8 @@ public class TurfWar extends PApplet {
          * not select black, white or the color you used for your background as it
          * will give that player an unfair advantage.
          */
-         player1= new Player(50, 50, 5, 20, Color.BLUE.getRGB(), W, A, S, D);
-         player2= new Player(250,250,5,20,Color.green.getRGB(), 38, 37, 40, 39);
+         player1= new Player(250, 250, 5, 20, Color.BLUE.getRGB(), W, A, 83, D);
+         player2= new Player(450,450,5,20,Color.green.getRGB(), 38, 37, 40, 39);
         
     }
 
@@ -267,12 +268,13 @@ public class TurfWar extends PApplet {
     	
     	//START HERE AND DO THE METHODS THING
         // 10. Call the drawPlayer method for both players.
-       // drawPlayer(player1);
-       //drawPlayer();
+        player1.drawPlayer();
+        player2.drawPlayer();
         // 11. Call the update method for both players.
-       // upadate();
+        player1.update();
+        player2.update();
         // 12. Call the isGameOver method.
-        //isGamerOver();
+        isGameOver();
         // 13. Call the displayStats method.
       displayStats();
         // 14. If gameOver is true call the endGame method.
@@ -289,17 +291,23 @@ public class TurfWar extends PApplet {
          * 15. Call the enableMovement method for both players and pass keyCode
          * to the method.
          */        
-System.out.println(keyCode);
+       player1.enableMovement(keyCode);
+       player2.enableMovement(keyCode);
+       
+       
+        
     }
 
-    @Override
+  
+
+	@Override
     public void keyReleased() {
         /*
          * 16. Call the disableMovement method for both players and pass keyCode
          * to the method.
          */
-
-    }
+		player1.disableMovement(keyCode);
+        player2.disableMovement(keyCode);
 
     /*
      * 17. Try to play a game of Turf War with someone nearby if possible. The
@@ -309,7 +317,7 @@ System.out.println(keyCode);
 
     // Challenge: Try to add more players to the game. If you need to figure out
     // additional keycodes for controls try using https://keycode.info/
-
+	}
     static public void main(String[] args) {
         PApplet.main(TurfWar.class.getName());
     }
